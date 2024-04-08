@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test App</string>
+    <string name="facebook_app_id">3729142363985885</string>
+    <string name="fb_login_protocol_scheme">fb3729142363985885</string>
+     <string name="facebook_client_token">EAA0ZCop3sF90BOx8Iacid2hZAO0QZBedPvo8Ul6hDOUcTagwB0qMCTFWkUi5oZBqYPhhsLY8KpF5uITkXdadmT7h8i9u0KPyvtncll4aGXDctyHAPzqUyt5TMK5QZCrjzs3AG9YlPuq3k46rJLNSaOz9eVCNRgZBsFZCZAHTgnXyW7D6HsUdYFmJgEhHMzVSQdwgu8WAcZBZCYGNUnTcq1nHn08QfwHX9hC8F0kEzkqUvz3YkAbtprQluDqa80kB9WZCwZDZD
+</string>
+
+  </resources>
