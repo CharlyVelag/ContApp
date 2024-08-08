@@ -1,6 +1,10 @@
+// ignore_for_file: avoid_print
+
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+
+import '../../../configuracionesGlobales.dart';
 
 class ProviderAltasRegistro with ChangeNotifier {
   File? _image = File("NoPath");
@@ -9,6 +13,7 @@ class ProviderAltasRegistro with ChangeNotifier {
   bool _cargaInsertar = false;
   bool _carga = true;
   bool _error = false;
+  
   File get image => _image!;
   set image(File value) {
     _image = value;
@@ -49,7 +54,7 @@ class ProviderAltasRegistro with ChangeNotifier {
   pruebas(String categoria, String iduser, String descrip, String cantidad,
       String fecha, String image, int facturado) async {
     String urlString =
-        'https://controlappv2.000webhostapp.com/Services/getDatos/actionsCRUD.php';
+        '${ConfiguracionesGlobales().urlHost}/Services/getDatos/actionsCRUD.php';
 
     var action = "InsertReg";
 
@@ -66,21 +71,6 @@ class ProviderAltasRegistro with ChangeNotifier {
 
     print(urlString);
     print(categoria + " - " + formData.fields.toString());
-    final response = await Dio()
-        .post(
-      urlString,
-      data: formData,
-    )
-        .timeout(
-      const Duration(seconds: 10),
-      onTimeout: () async {
-        carga = false;
-        error = true;
-        notifyListeners();
-
-        return Future.value(Dio().post(""));
-      },
-    );
   }
 
   Future<bool> insertNuevoRegistro(
@@ -96,7 +86,7 @@ class ProviderAltasRegistro with ChangeNotifier {
 
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/actionsCRUD.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/actionsCRUD.php';
 
       var action = "InsertReg";
 

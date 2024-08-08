@@ -1,7 +1,6 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, unused_local_variable
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_application_13/Pantallas/Login/login.dart';
 import 'package:flutter_application_13/Pantallas/categorias/model/Modeloviajes.dart';
 import 'package:flutter_application_13/Pantallas/categorias/provider/providerCategorias.dart';
 import 'package:provider/provider.dart';

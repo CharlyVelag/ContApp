@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, prefer_final_fields, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_13/Pantallas/altaregistros/altausuarios.dart';
@@ -24,6 +24,7 @@ class CustomFormulario extends StatefulWidget {
 
 class _CustomFormularioState extends State<CustomFormulario> {
   SpeechToText _speechToText = SpeechToText();
+  // ignore: unused_field
   bool _speechEnabled = false;
   bool isListen = false;
   String _lastWords = '';
@@ -34,31 +35,21 @@ class _CustomFormularioState extends State<CustomFormulario> {
     _initSpeech();
   }
 
-  /// This has to happen only once per app
   void _initSpeech() async {
     _speechEnabled = await _speechToText.initialize();
     setState(() {});
   }
 
-  /// Each time to start a speech recognition session
   void _startListening() async {
     print("Iniciamos listening");
     await _speechToText.listen(onResult: _onSpeechResult);
     setState(() {});
   }
-
-  /// Manually stop the active speech recognition session
-  /// Note that there are also timeouts that each platform enforces
-  /// and the SpeechToText plugin supports setting timeouts on the
-  /// listen method.
   void _stopListening() async {
     print("Apagamos listening");
     await _speechToText.stop();
     setState(() {});
   }
-
-  /// This is the callback that the SpeechToText plugin calls when
-  /// the platform returns recognized words.
   void _onSpeechResult(SpeechRecognitionResult result) {
     print(result);
     setState(() {
@@ -224,10 +215,6 @@ class _CustomFormularioState extends State<CustomFormulario> {
     if (pickedfile != null) {
       List<CropAspectRatioPreset> aspectRatioPresets = const [
         CropAspectRatioPreset.original,
-        //CropAspectRatioPreset.square,
-        //CropAspectRatioPreset.ratio3x2,
-        //CropAspectRatioPreset.ratio4x3,
-        //CropAspectRatioPreset.ratio16x9
       ];
       final cropped = (await ImageCropper().cropImage(
         cropStyle: CropStyle.rectangle,

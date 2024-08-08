@@ -1,6 +1,10 @@
+// ignore_for_file: file_names, avoid_print
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_13/Pantallas/Ajustes/model/modeluser.dart';
+
+import '../../../configuracionesGlobales.dart';
 
 class ProviderAjustes with ChangeNotifier {
   bool _editable = false;
@@ -32,7 +36,7 @@ class ProviderAjustes with ChangeNotifier {
     notifyListeners();
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/getInfoUser.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/getInfoUser.php';
 
       var formData = FormData.fromMap({
         'id': idUsuario,
@@ -89,7 +93,7 @@ class ProviderAjustes with ChangeNotifier {
     notifyListeners();
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/actionsCRUD.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/actionsCRUD.php';
 
       var formData = FormData.fromMap({
         'actioncrud': "UpdateUser",
@@ -149,7 +153,7 @@ class ProviderAjustes with ChangeNotifier {
     notifyListeners();
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/actionsCRUD.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/actionsCRUD.php';
 
       var formData = FormData.fromMap({
         'actioncrud': "VerificarCorreo",

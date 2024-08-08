@@ -113,6 +113,17 @@ class _InfoCardState extends State<InfoCard> {
             ),
             ElevatedButton(
                 onPressed: () async {
+                   //!Provicional daots navegacion
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) =>
+                          const PantallaPrincipalScreen(
+                        nombre: "Paramentro Statico",
+                        img: "",
+                        id: "1",
+                      ),
+                    ),
+                  );
                   FocusScope.of(context).requestFocus(FocusNode());
                   if (error.isEmpty &&
                       error2.isEmpty &&

@@ -68,19 +68,19 @@ class _CustomAddCompraWidgetState extends State<CustomAddCompraWidget> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 120),
             child: ElevatedButton(
-                onPressed: (provider.carga || provider.error)
+                onPressed: /* (provider.carga || provider.error)
                     ? null
-                    : () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute<void>(
-                              builder: (BuildContext context) =>
-                                  PantallaAltaRegistro(
-                                    categoria: widget.categoria,
-                                    img: widget.img,
-                                    iduser: widget.idUser,
-                                  )),
-                        );
-                      },
+                    : */
+                    () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute<void>(
+                        builder: (BuildContext context) => PantallaAltaRegistro(
+                              categoria: widget.categoria,
+                              img: widget.img,
+                              iduser: widget.idUser,
+                            )),
+                  );
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [

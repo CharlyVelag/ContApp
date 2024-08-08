@@ -1,11 +1,9 @@
-// ignore_for_file: file_names, must_be_immutable
+// ignore_for_file: file_names, must_be_immutable, unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_13/Pantallas/categorias/services/operaciones.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-
 import '../Pantallas/categorias/provider/providerCategorias.dart';
 
 class CustomListTile extends StatelessWidget {

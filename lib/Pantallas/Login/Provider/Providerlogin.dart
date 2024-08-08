@@ -1,9 +1,12 @@
-
 // ignore_for_file: file_names, avoid_print
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_13/Pantallas/Login/Model/modellogin.dart';
+import 'package:flutter_application_13/configuracionesGlobales.dart';
+
+import '../../../ApiFlutterConnectMySQL/apiflutterconnectmysql.dart';
+
 
 class ProviderLogin with ChangeNotifier {
   String nombre = "";
@@ -52,7 +55,7 @@ class ProviderLogin with ChangeNotifier {
     notifyListeners();
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/insertUsers.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/insertUsers.php';
 
       var formData = FormData.fromMap({
         'nombre': nombre,
@@ -120,7 +123,7 @@ class ProviderLogin with ChangeNotifier {
     notifyListeners();
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/getUser.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/getUser.php';
 
       var formData = FormData.fromMap({
         'mailorfacebookid': mailorfacebookid,
@@ -172,15 +175,13 @@ class ProviderLogin with ChangeNotifier {
     }
   }
 
-
-   Future<String> verificarCorreo(String correo) async {
+  Future<String> verificarCorreo(String correo) async {
     carga = true;
     notifyListeners();
     try {
-      String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/actionsCRUD.php';
-
-      var formData = FormData.fromMap({
+      String urlString = ApiFlutterConnectMysql.login;
+      print(urlString);
+     var formData = FormData.fromMap({
         'actioncrud': "VerificarCorreo",
         'email': correo.replaceAll(" ", ""),
       });

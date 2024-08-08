@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_13/Pantallas/Login/Provider/Providerlogin.dart';
-import 'package:flutter_application_13/Pantallas/Login/login.dart';
 import 'package:flutter_application_13/Pantallas/Login/service/servicios.dart';
 import 'package:flutter_application_13/widgetsApp/CustomSocialMedia.dart';
 import 'package:flutter_application_13/widgetsApp/islanaux.dart';
@@ -129,18 +128,19 @@ class _PageLoginSistemaSolarState extends State<PageLoginSistemaSolar> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const VerticalSpacing(of: 50.0),
-                    Tabs(
+                    // const VerticalSpacing(of: 50.0),
+                    /* Tabs(
                         isDartkTheme: isDartkTheme,
                         press: (value) => setState(() {
                               isDartkTheme = value == 0 ? false : true;
-                            })),
+                            })),*/
                     const Divider(
-                      height: 20,
+                      height: 140,
                       color: Colors.transparent,
                     ),
                     AnimatedContainer(
                       duration: const Duration(milliseconds: 400),
+                      //height: size.height / 2,
                       decoration: BoxDecoration(
                           color: Colors.black26,
                           borderRadius: BorderRadius.circular(12)),
@@ -234,6 +234,17 @@ class _PageLoginSistemaSolarState extends State<PageLoginSistemaSolar> {
                                           ),
                                           backgroundColor: Colors.red,
                                         ));
+                                        //!Provicional daots navegacion
+                                        Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute<void>(
+                                            builder: (BuildContext context) =>
+                                                const PantallaPrincipalScreen(
+                                              nombre: "Paramentro Statico",
+                                              img: "",
+                                              id: "1",
+                                            ),
+                                          ),
+                                        );
                                       } else {
                                         await pc.totalgastos(
                                             provider.modelUser[0].idUser);
@@ -279,6 +290,18 @@ class _PageLoginSistemaSolarState extends State<PageLoginSistemaSolar> {
                               CustomSocialButton(
                                   icon: MdiIcons.facebook,
                                   onpressed: () async {
+                                    //!Provicional daots navegacion
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute<void>(
+                                        builder: (BuildContext context) =>
+                                            const PantallaPrincipalScreen(
+                                          nombre: "Paramentro Statico",
+                                          img: "",
+                                          id: "1",
+                                        ),
+                                      ),
+                                    );
+
                                     FacebookAuth.instance
                                         .login(permissions: [
                                           "public_profile",
@@ -337,9 +360,35 @@ class _PageLoginSistemaSolarState extends State<PageLoginSistemaSolar> {
                                         });
                                   }),
                               CustomSocialButton(
-                                  icon: MdiIcons.google, onpressed: () {}),
+                                  icon: MdiIcons.google,
+                                  onpressed: () {
+                                    //!Provicional daots navegacion
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute<void>(
+                                        builder: (BuildContext context) =>
+                                            const PantallaPrincipalScreen(
+                                          nombre: "Paramentro Statico",
+                                          img: "",
+                                          id: "1",
+                                        ),
+                                      ),
+                                    );
+                                  }),
                               CustomSocialButton(
-                                  icon: MdiIcons.apple, onpressed: () {})
+                                  icon: MdiIcons.apple,
+                                  onpressed: () {
+                                    //!Provicional daots navegacion
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute<void>(
+                                        builder: (BuildContext context) =>
+                                            const PantallaPrincipalScreen(
+                                          nombre: "Paramentro Statico",
+                                          img: "",
+                                          id: "1",
+                                        ),
+                                      ),
+                                    );
+                                  })
                             ],
                           ),
                           const Divider(
@@ -400,7 +449,7 @@ class _PageLoginSistemaSolarState extends State<PageLoginSistemaSolar> {
             children: [
               Text(
                 p.carga ? "Validando usuario" : "Cargando información",
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

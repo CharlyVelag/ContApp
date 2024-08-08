@@ -177,7 +177,6 @@ class Ajustes extends StatelessWidget {
   }
 
   SizedBox loadingappCustomCharly(ProviderAjustes p, BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return SizedBox(
       height: double.infinity,
       width: double.infinity,
@@ -239,7 +238,7 @@ class Ajustes extends StatelessWidget {
                   ),
                 ],
               )));
-          print(textPassWord.text);
+         
         } else if (estatus == "No") {
           p.actualizarDatos(infouser[0].idUser, textCorreo.text.toLowerCase(),
               textPassWord.text, textTelefono.text);

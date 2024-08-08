@@ -1,8 +1,10 @@
-// ignore_for_file: file_names, avoid_print, prefer_typing_uninitialized_variables
+// ignore_for_file: file_names, avoid_print, prefer_typing_uninitialized_variables, unused_field, prefer_final_fields
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_13/Pantallas/categorias/model/Modeloviajes.dart';
 import 'package:dio/dio.dart';
+
+import '../../../configuracionesGlobales.dart';
 
 class ProviderCategoria with ChangeNotifier {
   bool _carga = false;
@@ -11,7 +13,7 @@ class ProviderCategoria with ChangeNotifier {
   bool _error = false;
   int _mesSelected = 0;
   Map userObj = {};
-  String _totalMes = "0.00";
+  final String _totalMes = "0.00";
   String _calcularMes = "0.00";
   String _porcentaje = "0.00";
   bool _cargaAux = false;
@@ -95,7 +97,7 @@ class ProviderCategoria with ChangeNotifier {
     print(categoria);
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/GetDataAppv2.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/GetDataAppv2.php';
       var action = "totalMes";
       var mes;
       var year;
@@ -175,7 +177,7 @@ class ProviderCategoria with ChangeNotifier {
     notifyListeners();
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/GetDataAppv2.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/GetDataAppv2.php';
       var action = "total";
       for (int i = 0; i < 6; i++) {
         if (i == 0) {
@@ -400,7 +402,7 @@ class ProviderCategoria with ChangeNotifier {
     notifyListeners();
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/GetDataAppv2.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/GetDataAppv2.php';
       var action = "totalMes";
       var mes;
       var year;
@@ -698,7 +700,7 @@ class ProviderCategoria with ChangeNotifier {
 
     try {
       String urlString =
-          'https://controlappv2.000webhostapp.com/Services/getDatos/GetDataAppv2.php';
+          '${ConfiguracionesGlobales().urlHost}/Services/getDatos/GetDataAppv2.php';
 
       var action = "totalMes";
       var mes;

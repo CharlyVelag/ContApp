@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final infoUser = infoUserFromJson(jsonString);
-
 import 'dart:convert';
 
 List<InfoUser> modeloLoginUserFromMap(String str) =>

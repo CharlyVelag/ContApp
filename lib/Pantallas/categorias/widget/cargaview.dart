@@ -5,7 +5,6 @@ import '../../Principal/widget/widgetcargaInformacion.dart';
 ! clase encargada de envolver cada contenedor con animacion y devolverlo a la clase principal
   ? se reciben un parametro obligatorio
     * size -> recibe las dimenciones del dispositivo
-    todo: Autor Carlos Alejandro Velasco aguilar
  */
 class AnimationCargaInfo extends StatelessWidget {
   const AnimationCargaInfo({

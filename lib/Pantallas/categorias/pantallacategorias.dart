@@ -1,7 +1,6 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_13/Pantallas/Login/login.dart';
 import 'package:flutter_application_13/Pantallas/Principal/pantallaprincipal.dart';
 import 'package:flutter_application_13/Pantallas/categorias/provider/providerCategorias.dart';
 import 'package:flutter_application_13/Pantallas/categorias/widget/cargaview.dart';

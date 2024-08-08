@@ -1,4 +1,4 @@
-// ignore_for_file: unrelated_type_equality_checks
+// ignore_for_file: unrelated_type_equality_checks, avoid_print
 
 import 'dart:io';
 import 'dart:convert';
@@ -12,7 +12,6 @@ import 'package:flutter_application_13/Pantallas/categorias/services/operaciones
 import 'package:flutter_application_13/widgetsApp/islandDinamic.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:http/http.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lottie/lottie.dart';
@@ -121,7 +120,7 @@ class _PantallaAltaRegistroState extends State<PantallaAltaRegistro> {
                 onPressed: () {
                   showImageSource(context);
                 },
-                tooltip: "Scanner con IA",
+                tooltip: "Scanner",
                 iconSize: 25,
                 padding: EdgeInsets.zero,
                 icon: Lottie.asset(
@@ -221,7 +220,7 @@ class _PantallaAltaRegistroState extends State<PantallaAltaRegistro> {
               children: const [
                 Icon(MdiIcons.informationBoxOutline),
                 Text(
-                  "Ocurrio un error al insertar nuevo registro intente de nuevo",
+                  "Ocurrio un error al insertar nuevo registro\n intente de nuevo",
                   style: TextStyle(color: Colors.white),
                 ),
               ],
@@ -235,7 +234,7 @@ class _PantallaAltaRegistroState extends State<PantallaAltaRegistro> {
             children: const [
               Icon(MdiIcons.informationBoxOutline),
               Text(
-                "Advertencia: Datos imcompletos",
+                "Advertencia: Datos incompletos",
                 style: TextStyle(color: Colors.white),
               ),
             ],
@@ -331,10 +330,6 @@ class _PantallaAltaRegistroState extends State<PantallaAltaRegistro> {
 
       List<CropAspectRatioPreset> aspectRatioPresets = const [
         CropAspectRatioPreset.original,
-        //CropAspectRatioPreset.square,
-        //CropAspectRatioPreset.ratio3x2,
-        //CropAspectRatioPreset.ratio4x3,
-        //CropAspectRatioPreset.ratio16x9
       ];
       final cropped = (await ImageCropper().cropImage(
         cropStyle: CropStyle.rectangle,
@@ -426,7 +421,7 @@ class _PantallaAltaRegistroState extends State<PantallaAltaRegistro> {
         }
         if (lines.text == 21) {
           if (numregex.hasMatch(lines.text)) {
-            //("CODIGOOOOOOOOO ${lines.text}");
+            //TODO: codigo de barras faltante implementar
           }
         }
       }

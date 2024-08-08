@@ -10,7 +10,6 @@ import 'package:shimmer/shimmer.dart';
     * altura -> double con la altura que tomara el widget
     * ancho -> double con el ancho que tomamra el widget
     * radius -> double para el radio del widget
-    todo: Autor Carlos Alejandro Velasco aguilar
  */
 class WidgetAnimacionCarga extends StatelessWidget {
   final double altura;

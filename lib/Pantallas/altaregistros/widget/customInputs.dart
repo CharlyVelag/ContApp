@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_13/Pantallas/altaregistros/altausuarios.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class ValidationTextField extends StatefulWidget {
   const ValidationTextField(
@@ -61,8 +60,6 @@ class _ValidationTextFieldState extends State<ValidationTextField> {
             if (RegExp(r'^([0-9]+\.?[0-9]{0,2})$').hasMatch(val)) {
               cantidad.text = val;
               widget.textEditingController!.text = val;
-              print("VAL: " + val);
-              print("Controller: " + cantidad.text);
             }
           }
         },
